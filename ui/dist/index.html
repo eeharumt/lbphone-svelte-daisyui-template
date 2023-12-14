@@ -2,31 +2,42 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="/favicon.png" />
+		<link rel="icon" href="/ui/dist/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
-		<link rel="modulepreload" href="/ui/dist/_app/immutable/entry/start.6c1ade27.js">
+		<link href="/ui/dist/_app/immutable/assets/0.6dde4ddf.css" rel="stylesheet">
+		<link rel="modulepreload" href="/ui/dist/_app/immutable/entry/start.95afd8bb.js">
 		<link rel="modulepreload" href="/ui/dist/_app/immutable/chunks/scheduler.e108d1fd.js">
-		<link rel="modulepreload" href="/ui/dist/_app/immutable/chunks/singletons.85ae2721.js">
-		<link rel="modulepreload" href="/ui/dist/_app/immutable/entry/app.918bd52f.js">
+		<link rel="modulepreload" href="/ui/dist/_app/immutable/chunks/singletons.47c364a3.js">
+		<link rel="modulepreload" href="/ui/dist/_app/immutable/entry/app.d84242d8.js">
 		<link rel="modulepreload" href="/ui/dist/_app/immutable/chunks/index.4d21fe7b.js">
+		<link rel="modulepreload" href="/ui/dist/_app/immutable/nodes/0.70f806e9.js">
+		<link rel="modulepreload" href="/ui/dist/_app/immutable/nodes/2.37d5f9f4.js">
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">
+		<div style="display: contents">  <div class="navbar bg-base-100" data-svelte-h="svelte-1qf9kje"><div class="flex-1"><div class="btn btn-ghost text-xl">サンプル</div></div> <div class="flex-none"><button class="btn btn-square btn-ghost"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path></svg></button></div></div> <div class="container mx-auto px-4"><h1 class="text-3xl font-bold underline" data-svelte-h="svelte-bk5epg">Hello world!</h1> <button class="btn btn-primary btn-lg" data-svelte-h="svelte-1664e0j">虚無</button></div> 
+			
 			<script>
 				{
-					__sveltekit_1pulomo = {
-						base: "",
+					__sveltekit_14hdbbl = {
+						base: new URL(".", location).pathname.slice(0, -1),
 						env: {}
 					};
 
 					const element = document.currentScript.parentElement;
 
+					const data = [null,null];
+
 					Promise.all([
-						import("/ui/dist/_app/immutable/entry/start.6c1ade27.js"),
-						import("/ui/dist/_app/immutable/entry/app.918bd52f.js")
+						import("/ui/dist/_app/immutable/entry/start.95afd8bb.js"),
+						import("/ui/dist/_app/immutable/entry/app.d84242d8.js")
 					]).then(([kit, app]) => {
-						kit.start(app, element);
+						kit.start(app, element, {
+							node_ids: [0, 2],
+							data,
+							form: null,
+							error: null
+						});
 					});
 				}
 			</script>
