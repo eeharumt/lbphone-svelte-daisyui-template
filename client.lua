@@ -19,7 +19,7 @@ CreateThread(function ()
             ui = GetCurrentResourceName() .. "/ui/dist/index.html", -- built version
             -- ui = "http://localhost:3000", -- dev version
 
-            icon = "https://cfx-nui-" .. GetCurrentResourceName() .. "/ui/icon.png"
+            icon = "https://cfx-nui-" .. GetCurrentResourceName() .. "/ui/static/favicon.png"
         })
 
         if not added then
