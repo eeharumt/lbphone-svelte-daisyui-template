@@ -3,7 +3,7 @@
   </script>
   <div class="navbar bg-base-100">
     <div class="flex-1">
-      <a class="btn btn-ghost text-xl">サンプル</a>
+      <div class="btn btn-ghost text-xl">サンプル</div>
     </div>
     <div class="flex-none">
       <button class="btn btn-square btn-ghost">
