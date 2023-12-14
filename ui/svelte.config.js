@@ -18,7 +18,7 @@ const config = {
 			precompress: false,
 			strict: true			
 		}),
-		paths: {base: '/ui/dist'},
+		// paths: {base: '/ui/dist'},
 	}
 };
 
