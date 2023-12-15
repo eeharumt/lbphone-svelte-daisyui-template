@@ -18,8 +18,8 @@ const config = {
 			precompress: false,
 			strict: true,
 			trailingSlash: 'always'
-		})
-		// paths: {base: '/ui/dist'},
+		}),
+		paths: { relative: true}
 	}
 };
 

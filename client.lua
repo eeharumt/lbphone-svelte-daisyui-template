@@ -1,4 +1,4 @@
-local identifier = "react-ts-template"
+local identifier = "svelte-ts-template"
 
 CreateThread(function ()
     while GetResourceState("lb-phone") ~= "started" do
