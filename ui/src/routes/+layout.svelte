@@ -5,14 +5,14 @@
 
 	let isphoneWrapper = false;
 
-	onMount(() => {
-		if (window.invokeNative) {
-			isphoneWrapper = false;
-		} else {
-			isphoneWrapper = true;
-			document.body.style.visibility = 'visible';
-		}
-	});
+	// onMount(() => {
+	// 	if (window.invokeNative) {
+	// 		isphoneWrapper = false;
+	// 	} else {
+	// 		isphoneWrapper = true;
+	// 		document.body.style.visibility = 'visible';
+	// 	}
+	// });
 </script>
 
 <div class:phone-wrapper={isphoneWrapper}>
