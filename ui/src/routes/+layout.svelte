@@ -1,12 +1,16 @@
-<script>
+<script lang="ts">
 	import '../app.css';
 	import { onMount } from 'svelte';
 	// import { browser } from '$app/env';
 
 	let isphoneWrapper = false;
-
+	let theme = "dark"
+	
 	onMount(() => {
 		if (window.invokeNative) {
+			let { setPopUp, setContextMenu, selectGIF, selectGallery, selectEmoji, fetchNui, sendNotification, getSettings, onSettingsChange, colorPicker, useCamera } = window as any;
+			getSettings().then(settings => theme = settings.display.theme);
+            onSettingsChange(settings => theme = settings.display.theme);
 			isphoneWrapper = false;
 		} else {
 			isphoneWrapper = true;
@@ -16,7 +20,7 @@
 </script>
 
 <div id="app-root">
-	<div data-theme="dark">
+	<div data-theme={theme}>
 		<div class:phone-wrapper={isphoneWrapper}>
 			<slot />
 		</div>
