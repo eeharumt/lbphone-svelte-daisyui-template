@@ -15,10 +15,8 @@
 	// });
 </script>
 
-<div class:phone-wrapper={isphoneWrapper}>
-	<div class="app">
-		<slot />
-	</div>
+<div id="app-root" class:phone-wrapper={isphoneWrapper}>
+	<slot />
 </div>
 
 <style>
@@ -35,8 +33,10 @@
 		height: 58.5rem;
 	}
 
-	.app {
+	#app-root {
 		height: 100vh;
 		width: 100%;
+		background-color: var(--fallback-b1,oklch(var(--b1)/1));
+  		color: var(--fallback-bc,oklch(var(--bc)/1));
 	}
 </style>

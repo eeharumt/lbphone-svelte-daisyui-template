@@ -5,5 +5,9 @@ export default {
     extend: {},
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    base: false, // applies background color and foreground color for root element by default
+    themeRoot: "#app-root", // The element that receives theme color CSS variables
+  },
 }
 
