@@ -1,26 +1,34 @@
 <script lang="ts">
 	import '../app.css';
 	import { onMount } from 'svelte';
-	// import { browser } from '$app/env';
+	import { browser } from '$app/environment';
 
 	let isphoneWrapper = false;
-	let theme = "dark"
-	
+	let theme = 'light';
+	const devMode = !(typeof window !== 'undefined' && window['invokeNative']);
+
 	onMount(() => {
-		if (window.invokeNative) {
-			let { setPopUp, setContextMenu, selectGIF, selectGallery, selectEmoji, fetchNui, sendNotification, getSettings, onSettingsChange, colorPicker, useCamera } = window as any;
-			getSettings().then(settings => theme = settings.display.theme);
-            onSettingsChange(settings => theme = settings.display.theme);
+		if (!browser) return;
+		if (devMode) {
+			document.body.style.visibility = 'visible';
 			isphoneWrapper = false;
 		} else {
-			isphoneWrapper = true;
-			document.body.style.visibility = 'visible';
+			isphoneWrapper = false;
+			window.addEventListener('message', (e) => {
+				if (e.data !== 'componentsLoaded') return;
+				getSettings().then((settings) => {
+					theme = settings.display.theme;
+				});
+				// onSettingsChange((settings) => {
+				// 	theme = settings.display.theme;
+				// });
+			});
 		}
 	});
 </script>
 
 <div id="app-root">
-	<div data-theme={theme}>
+	<div data-theme={theme} id="app">
 		<div class:phone-wrapper={isphoneWrapper}>
 			<slot />
 		</div>
@@ -39,7 +47,7 @@
 		height: 58.5rem;
 	}
 
-	#app-root {
+	#app {
 		height: 100vh;
 		width: 100%;
 	}

@@ -18,14 +18,19 @@ body {
     box-sizing: border-box;
 }
 
+/* 背景・ベースカラー */
 #app-root,
 [data-theme] {
     background-color: theme(colors.base-100);
     color: theme(colors.base-content);
 }
 
+/* lb-phone で oklch 使用できず fallback でテーマ色を指定 */
+
 @supports not (color: oklch(0 0 0)) {
-    #app-root {
+
+    /* ライトテーマ */
+    #app-root [data-theme="light"] {
         color-scheme: light;
         --fallback-p: #491eff;
         --fallback-pc: #d4dbff;
@@ -49,11 +54,12 @@ body {
         --fallback-erc: #000000;
     }
 
+    /* ダークテーマ */
     @media (prefers-color-scheme: dark) {
         #app-root {
             color-scheme: dark;
             --fallback-p: #7582ff;
-            --fallback-pc: #050617;
+            --fallback-pc: #d3d4e2;
             --fallback-s: #ff71cf;
             --fallback-sc: #190211;
             --fallback-a: #00c7b5;

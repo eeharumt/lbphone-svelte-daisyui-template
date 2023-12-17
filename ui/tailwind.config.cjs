@@ -1,14 +1,11 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
-  theme: {
-    extend: {},
-  },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["light", "dark", "cupcake"],
-    base: false, // applies background color and foreground color for root element by default
-    themeRoot: "#app-root", // The element that receives theme color CSS variables
+    themes: ["light", "dark",], // oklch で指定できないためテーマ反映できない
+    base: false, // :root にスタイルを指定するとゲーム画面全体に影響するため削除
+    themeRoot: "#app-root", // :root にスタイルを指定するとゲーム画面全体に影響するため削除
   },
 }
 
