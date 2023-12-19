@@ -4,7 +4,7 @@
 	import { browser } from '$app/environment';
 
 	let isphoneWrapper = false;
-	let theme = 'light';
+	let theme = 'dark';
 	const devMode = !(typeof window !== 'undefined' && window['invokeNative']);
 
 	onMount(() => {
