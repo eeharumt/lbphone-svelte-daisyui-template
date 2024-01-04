@@ -2,9 +2,22 @@
 module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	plugins: [require('daisyui')],
+	corePlugins: {
+
+		transitionProperty: false,
+	},
 	daisyui: {
-		themes: ['light', 'dark'], // oklch で指定できないためテーマ反映できない
-		base: false, // :root にスタイルを指定するとゲーム画面全体に影響するため削除
-		themeRoot: '#app-root' // :root にスタイルを指定するとゲーム画面全体に影響するため削除
+		themes: [{
+			light: {
+				...require("daisyui/src/theming/themes")["light"],
+				primary: "88b20e",
+			},
+			dark: {
+				...require("daisyui/src/theming/themes")["dark"],
+				primary: "88b20e",
+			},
+		}], 
+		// themes 設定はDev用 (lb-Phoneではoklch で指定できないため)
+		// app.cssのフォールバックテーマで変更すること
 	}
 };
