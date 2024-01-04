@@ -1,4 +1,4 @@
-local identifier = "svelte-ts-template"
+local identifier = "svelte-daisyui-template"
 
 CreateThread(function ()
     while GetResourceState("lb-phone") ~= "started" do
