@@ -8,10 +8,10 @@ CreateThread(function ()
     local function AddApp()
         local added, errorMessage = exports["lb-phone"]:AddCustomApp({
             identifier = identifier,
-            name = "Svelte TS",
-            description = "Template app using svelte",
+            name = "Svelte App",
+            description = "Template app using svelte + daisyUI",
             developer = "eeharumt",
-            defaultApp = true, -- OPTIONAL if set to true, app should be added without having to download it,
+            defaultApp = false, -- OPTIONAL if set to true, app should be added without having to download it,
             size = 59812, -- OPTIONAL in kb
             price = 0, -- OPTIONAL, Make players pay with in-game money to download the app
             -- images = {"https://example.com/photo.jpg"}, -- OPTIONAL array of images for the app on the app store

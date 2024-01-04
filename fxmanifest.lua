@@ -1,7 +1,7 @@
 fx_version "cerulean"
 game "gta5"
 
-title "LB Phone - App Template | Svelte TS"
+title "LB Phone - App Template | Svelte TS + daisyUI"
 description "A template for creating apps for the LB Phone."
 author "eeharumt"
 
@@ -12,5 +12,5 @@ files {
     "ui/dist/favicon.png"
 }
 
-ui_page "ui/dist/index.html"
+-- ui_page "ui/dist/index.html"
 -- ui_page "http://localhost:3000"
